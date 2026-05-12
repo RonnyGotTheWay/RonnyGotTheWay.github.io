@@ -34,7 +34,7 @@ My work focused on designing the modeling workflow, comparing six model families
 | High-intent group conversion rate | **41.9%** |
 | Main interpretation | PageValues is the dominant predictive signal, but it should be treated as predictive rather than causal. |
 
-Links: [Project page](projects/stat-474-online-shoppers/) | [R code](projects/stat-474-online-shoppers/online_shoppers_analysis.R) | [Final report](projects/stat-474-online-shoppers/final-report.pdf) | [Proposal](projects/stat-474-online-shoppers/proposal.pdf)
+Links: [Project page](projects/stat-474-online-shoppers/index.html) | [R code](projects/stat-474-online-shoppers/online_shoppers_analysis.R) | [Final report](projects/stat-474-online-shoppers/final-report.pdf) | [Proposal](projects/stat-474-online-shoppers/proposal.pdf)
 
 ---
 
