@@ -1,56 +1,70 @@
-# Ronny Got The Way
+# Lei Duli
 
-## Data Science / Statistics Student
+## Data Analytics | Statistical Modeling | Machine Learning
 
-I am a statistics student with strong interests in data analysis, machine learning, and applied statistical modeling.  
-This website serves as my personal data science portfolio.
+Welcome to my personal data science portfolio. I build projects that connect statistical reasoning, machine learning workflows, and business-readable interpretation.
 
----
-
-## Skills
-
-- Programming: Python, R
-- Data Analysis & Statistics
-- Machine Learning
-- Data Visualization
-- Git & GitHub
+[Portfolio Website](https://ronnygottheway.github.io/) | [GitHub](https://github.com/RonnyGotTheWay) | [Email](mailto:leiduli@arizona.edu)
 
 ---
 
-## Projects
+## About
 
-### 📊 Project 1: Large-Scale Data Preprocessing and Feature Discretization
-
-**Description:**  
-This project focuses on large-scale data preprocessing and feature discretization for a real-world used car transaction dataset.  
-The main objective is to transform raw, noisy, and highly skewed numerical features into structured, model-ready inputs suitable for downstream statistical analysis and predictive modeling.
-
-Key steps include data cleaning, missing value handling, outlier detection, feature discretization, and encoding strategies commonly used in data science workflows.
-
-- Techniques: Data cleaning, outlier detection, equal-width & equal-frequency discretization, ordinal encoding, one-hot encoding
-- Tools: Python, pandas, NumPy, scikit-learn
-- Dataset: Large-scale used car transaction dataset
-- Skills Highlighted: Data preprocessing, feature engineering, exploratory data analysis
-- [GitHub Repository](#)
+I am a statistics student at the University of Arizona with strong interests in data analysis, machine learning, and applied statistical modeling. My work focuses on reproducible analysis, fair model comparison, and translating model results into useful decisions.
 
 ---
 
-### 🤖 Project 2: Heuristic Optimization of LSTM-Based Models for Time-Series Prediction  
-*(Course Research Paper)*
+## Featured Project
 
-**Description:**  
-This course research project presents a comprehensive review and analysis of heuristic algorithm optimization strategies applied to LSTM-based models for time-series forecasting tasks.
+### From Browsing to Buying: Predicting Online Purchase Intention
 
-The study systematically examines how heuristic methods—such as Particle Swarm Optimization (PSO), Genetic Algorithms (GA), Simulated Annealing (SA), and Ant Colony Optimization (ACO)—can improve model performance through hyperparameter tuning and network structure optimization.  
-Applications across multiple domains, including energy systems, transportation, finance, and meteorology, are reviewed and compared.
+**Course:** STAT 474<br>
+**Focus:** Modeling Strategy and Evaluation<br>
+**Tools:** R, tidyverse, caret, pROC, glmnet, randomForest, gbm, kernlab
 
-- Techniques: LSTM, BiLSTM, GRU, heuristic optimization, hyperparameter tuning
-- Methods Reviewed: PSO, GA, SA, ACO
-- Domains: Energy forecasting, traffic prediction, financial time series, weather prediction
-- Skills Highlighted: Research synthesis, model comparison, time-series analysis
-- Output: Course research paper (independent work)
-- [Paper / GitHub Repository](#)
+This project uses the UCI Online Shoppers Purchasing Intention Dataset to predict whether an e-commerce browsing session will end in purchase. The target is highly imbalanced: only **15.5%** of sessions generated revenue, so the evaluation emphasizes F1, recall, balanced accuracy, and ROC AUC rather than accuracy alone.
 
+My work focused on designing the modeling workflow, comparing six model families, selecting thresholds from training-set cross-validated predictions, and evaluating final performance on a held-out test set.
+
+| Result | Value |
+| --- | --- |
+| Best F1 | Random Forest, **0.667** |
+| Best ROC AUC | Gradient Boosting, **0.922** |
+| Best recall | Random Forest, **0.769** |
+| High-intent group conversion rate | **41.9%** |
+| Main interpretation | PageValues is the dominant predictive signal, but it should be treated as predictive rather than causal. |
+
+Links: [Project page](projects/stat-474-online-shoppers/) | [R code](projects/stat-474-online-shoppers/online_shoppers_analysis.R) | [Final report](projects/stat-474-online-shoppers/final-report.pdf) | [Proposal](projects/stat-474-online-shoppers/proposal.pdf)
+
+---
+
+## Additional Projects
+
+### Large-Scale Data Preprocessing and Feature Discretization
+
+A data preprocessing and feature engineering project for a large used-car transaction dataset. The workflow focuses on cleaning raw data, handling missing values, identifying outliers, discretizing skewed numerical features, and preparing structured inputs for downstream modeling.
+
+**Skills:** data cleaning, outlier detection, equal-width and equal-frequency discretization, ordinal encoding, one-hot encoding<br>
+**Tools:** Python, pandas, NumPy, scikit-learn
+
+### Heuristic Optimization of LSTM-Based Models for Time-Series Prediction
+
+A course research paper reviewing heuristic optimization strategies for LSTM-based time-series forecasting. The work compares how PSO, GA, SA, and ACO can support hyperparameter tuning and network structure optimization across energy, transportation, finance, and weather applications.
+
+**Skills:** research synthesis, model comparison, time-series analysis<br>
+**Methods:** LSTM, BiLSTM, GRU, PSO, GA, SA, ACO
+
+---
+
+## Technical Toolkit
+
+| Category | Tools and Methods |
+| --- | --- |
+| Languages | R, Python, SQL |
+| Data work | data cleaning, EDA, feature engineering, visualization |
+| Modeling | logistic regression, LASSO, PCA, random forest, gradient boosting, SVM |
+| Evaluation | cross-validation, ROC AUC, F1, precision, recall, balanced accuracy |
+| Reporting | reproducible scripts, model interpretation, sensitivity analysis, executive summaries |
 
 ---
 
@@ -63,5 +77,5 @@ University of Arizona
 
 ## Contact
 
-- GitHub: https://github.com/RonnyGotTheWay
-- Email:leiduli@arizona.edu
+- GitHub: [RonnyGotTheWay](https://github.com/RonnyGotTheWay)
+- Email: [leiduli@arizona.edu](mailto:leiduli@arizona.edu)

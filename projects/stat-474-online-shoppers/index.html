@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="STAT 474 online shoppers purchase intention project by Lei Duli.">
+    <title>Online Purchase Intention | Lei Duli</title>
+    <link rel="stylesheet" href="../../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../../">Lei Duli</a>
+      <nav aria-label="Primary navigation">
+        <a href="../../#projects">Projects</a>
+        <a href="../../#skills">Skills</a>
+        <a href="../../#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section project-hero">
+        <p class="eyebrow">STAT 474 | Modeling Strategy and Evaluation</p>
+        <h1>From Browsing to Buying: Predicting Online Purchase Intention</h1>
+        <p class="lede">
+          A machine learning classification project using session-level e-commerce behavior to predict
+          whether an online shopping visit ends in purchase.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="final-report.pdf">Final report</a>
+          <a class="button secondary" href="online_shoppers_analysis.R">R code</a>
+          <a class="button secondary" href="proposal.pdf">Proposal</a>
+        </div>
+      </section>
+
+      <section class="metric-strip project-metrics" aria-label="Project highlights">
+        <div>
+          <span>12,330</span>
+          <p>shopping sessions</p>
+        </div>
+        <div>
+          <span>15.5%</span>
+          <p>purchase class share</p>
+        </div>
+        <div>
+          <span>0.922</span>
+          <p>best ROC AUC</p>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <div class="content-grid">
+          <article>
+            <h2>Project Overview</h2>
+            <p>
+              Most e-commerce visitors leave without buying, but their browsing sessions contain useful
+              signals: pages viewed, time spent, exit behavior, visitor type, seasonality, and page value.
+              This project predicts purchase intention with the UCI Online Shoppers Purchasing Intention Dataset.
+            </p>
+            <p>
+              Because purchases represent only 15.5% of sessions, the final evaluation prioritizes precision,
+              recall, F1, balanced accuracy, and ROC AUC instead of relying on accuracy alone.
+            </p>
+          </article>
+
+          <aside class="summary-card">
+            <h2>My Role</h2>
+            <p>
+              I focused on Modeling Strategy and Evaluation: model family selection, cross-validation design,
+              threshold selection, held-out test evaluation, and PageValues sensitivity analysis.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <h2>Modeling Design</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Decision</th>
+                <th>Why it mattered</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Stratified 80/20 split</td>
+                <td>Preserved the minority purchase rate in both training and test data.</td>
+              </tr>
+              <tr>
+                <td>Six model families</td>
+                <td>Compared interpretable baselines, regularization, PCA, nonlinear SVM, and tree ensembles.</td>
+              </tr>
+              <tr>
+                <td>5-fold cross-validation</td>
+                <td>Tuned hyperparameters without using the held-out test set.</td>
+              </tr>
+              <tr>
+                <td>F1-oriented thresholds</td>
+                <td>Matched the imbalanced business problem, where likely purchasers are the minority class.</td>
+              </tr>
+              <tr>
+                <td>PageValues sensitivity</td>
+                <td>Checked whether model performance depended too heavily on one analytics-derived variable.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <h2>Final Test-Set Results</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Threshold</th>
+                <th>Accuracy</th>
+                <th>Balanced Accuracy</th>
+                <th>Precision</th>
+                <th>Recall</th>
+                <th>F1</th>
+                <th>ROC AUC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Gradient Boosting</td>
+                <td>0.25</td>
+                <td>0.877</td>
+                <td>0.828</td>
+                <td>0.577</td>
+                <td>0.759</td>
+                <td>0.655</td>
+                <td><strong>0.922</strong></td>
+              </tr>
+              <tr>
+                <td>Random Forest</td>
+                <td>0.30</td>
+                <td>0.882</td>
+                <td><strong>0.836</strong></td>
+                <td>0.590</td>
+                <td><strong>0.769</strong></td>
+                <td><strong>0.667</strong></td>
+                <td>0.921</td>
+              </tr>
+              <tr>
+                <td>Radial SVM</td>
+                <td>0.14</td>
+                <td><strong>0.886</strong></td>
+                <td>0.810</td>
+                <td><strong>0.614</strong></td>
+                <td>0.701</td>
+                <td>0.654</td>
+                <td>0.894</td>
+              </tr>
+              <tr>
+                <td>LASSO Logistic Regression</td>
+                <td>0.15</td>
+                <td>0.867</td>
+                <td>0.808</td>
+                <td>0.553</td>
+                <td>0.722</td>
+                <td>0.626</td>
+                <td>0.892</td>
+              </tr>
+              <tr>
+                <td>PCA + Logistic Regression</td>
+                <td>0.27</td>
+                <td>0.880</td>
+                <td>0.766</td>
+                <td>0.612</td>
+                <td>0.601</td>
+                <td>0.607</td>
+                <td>0.883</td>
+              </tr>
+              <tr>
+                <td>Logistic Regression</td>
+                <td>0.24</td>
+                <td>0.871</td>
+                <td>0.771</td>
+                <td>0.575</td>
+                <td>0.627</td>
+                <td>0.600</td>
+                <td>0.881</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Random Forest produced the strongest F1 and balanced accuracy. Gradient Boosting produced the
+          highest ROC AUC. Together, the results show that tree ensembles captured nonlinear intent signals
+          better than the linear baselines.
+        </p>
+      </section>
+
+      <section class="section content-section">
+        <h2>Business Interpretation</h2>
+        <div class="project-grid">
+          <article class="project-card">
+            <h3>Predicted intent groups</h3>
+            <p>
+              Random Forest probabilities separated sessions into three equal-sized groups. The high-intent
+              group converted at 41.9%, compared with 0.4% for the low-intent group.
+            </p>
+          </article>
+          <article class="project-card">
+            <h3>PageValues sensitivity</h3>
+            <p>
+              Removing PageValues reduced Random Forest ROC AUC from 0.921 to 0.762 and F1 from 0.667
+              to 0.414. This supports PageValues as a strong predictive signal, not a direct causal claim.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Lei Duli</p>
+      <div>
+        <a href="../../">Portfolio home</a>
+        <a href="https://github.com/RonnyGotTheWay" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </footer>
+  </body>
+</html>

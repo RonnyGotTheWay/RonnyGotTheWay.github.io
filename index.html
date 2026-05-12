@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Lei Duli's data science portfolio: statistical modeling, machine learning, and applied analytics projects.">
+    <title>Lei Duli | Data Science Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top">Lei Duli</a>
+      <nav aria-label="Primary navigation">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section">
+        <div class="hero-copy">
+          <p class="eyebrow">Data analytics | Statistical modeling | Machine learning</p>
+          <h1>Turning behavior data into models people can actually use.</h1>
+          <p class="lede">
+            I am a statistics student at the University of Arizona building projects across predictive modeling,
+            imbalanced classification, data preprocessing, and applied machine learning.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">View projects</a>
+            <a class="button secondary" href="https://github.com/RonnyGotTheWay" target="_blank" rel="noreferrer">GitHub profile</a>
+          </div>
+        </div>
+        <aside class="profile-panel" aria-label="Profile snapshot">
+          <img src="https://avatars.githubusercontent.com/u/248307706?v=4" alt="Lei Duli GitHub avatar">
+          <div>
+            <p class="profile-name">Lei Duli</p>
+            <p class="profile-role">Statistics undergraduate</p>
+            <p class="profile-meta">University of Arizona</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="metric-strip" aria-label="Portfolio highlights">
+        <div>
+          <span>6</span>
+          <p>model families compared</p>
+        </div>
+        <div>
+          <span>0.922</span>
+          <p>best ROC AUC</p>
+        </div>
+        <div>
+          <span>41.9%</span>
+          <p>high-intent conversion rate</p>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Featured work</p>
+          <h2>Projects</h2>
+        </div>
+
+        <article class="featured-project">
+          <div class="project-main">
+            <p class="project-kicker">STAT 474 | Modeling Strategy and Evaluation</p>
+            <h3>From Browsing to Buying: Predicting Online Purchase Intention</h3>
+            <p>
+              An end-to-end machine learning project using the UCI Online Shoppers Purchasing Intention Dataset
+              to predict whether an e-commerce session will end in purchase. I focused on model selection,
+              cross-validation design, threshold strategy, final test-set evaluation, and sensitivity analysis.
+            </p>
+            <div class="tag-row" aria-label="Project methods">
+              <span>R</span>
+              <span>caret</span>
+              <span>Random Forest</span>
+              <span>Gradient Boosting</span>
+              <span>ROC AUC</span>
+              <span>F1</span>
+            </div>
+            <div class="link-row">
+              <a href="projects/stat-474-online-shoppers/">Project page</a>
+              <a href="projects/stat-474-online-shoppers/online_shoppers_analysis.R">R code</a>
+              <a href="projects/stat-474-online-shoppers/final-report.pdf">Final report</a>
+              <a href="projects/stat-474-online-shoppers/proposal.pdf">Proposal</a>
+            </div>
+          </div>
+          <div class="project-results" aria-label="Project results">
+            <div>
+              <span>0.667</span>
+              <p>Random Forest F1</p>
+            </div>
+            <div>
+              <span>0.922</span>
+              <p>Gradient Boosting ROC AUC</p>
+            </div>
+            <div>
+              <span>15.5%</span>
+              <p>purchase class share</p>
+            </div>
+          </div>
+        </article>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <p class="project-kicker">Data preprocessing</p>
+            <h3>Large-Scale Data Preprocessing and Feature Discretization</h3>
+            <p>
+              Cleaned and transformed a real-world used-car transaction dataset into structured, model-ready
+              inputs through missing value handling, outlier detection, discretization, and encoding.
+            </p>
+            <div class="tag-row">
+              <span>Python</span>
+              <span>pandas</span>
+              <span>scikit-learn</span>
+              <span>feature engineering</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <p class="project-kicker">Research synthesis</p>
+            <h3>Heuristic Optimization of LSTM-Based Models</h3>
+            <p>
+              Reviewed PSO, GA, SA, and ACO optimization strategies for LSTM-based time-series forecasting
+              across energy, transportation, finance, and weather domains.
+            </p>
+            <div class="tag-row">
+              <span>LSTM</span>
+              <span>PSO</span>
+              <span>GA</span>
+              <span>time series</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="section skills-section">
+        <div class="section-heading">
+          <p class="eyebrow">Technical toolkit</p>
+          <h2>What I work with</h2>
+        </div>
+        <div class="skills-grid">
+          <div>
+            <h3>Languages</h3>
+            <p>R, Python, SQL</p>
+          </div>
+          <div>
+            <h3>Data work</h3>
+            <p>EDA, cleaning, feature engineering, visualization</p>
+          </div>
+          <div>
+            <h3>Modeling</h3>
+            <p>Logistic regression, LASSO, PCA, random forest, gradient boosting, SVM</p>
+          </div>
+          <div>
+            <h3>Evaluation</h3>
+            <p>Cross-validation, ROC AUC, F1, precision, recall, balanced accuracy</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="site-footer">
+      <p>Lei Duli</p>
+      <div>
+        <a href="https://github.com/RonnyGotTheWay" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="mailto:leiduli@arizona.edu">leiduli@arizona.edu</a>
+      </div>
+    </footer>
+  </body>
+</html>
