@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="DATA 467 Airbnb NYC price modeling project by Lei Duli.">
+    <title>Airbnb NYC Price Modeling | Lei Duli</title>
+    <link rel="stylesheet" href="../../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../../">Lei Duli</a>
+      <nav aria-label="Primary navigation">
+        <a href="../../#projects">Projects</a>
+        <a href="../../#skills">Skills</a>
+        <a href="../../#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section project-hero split-hero">
+        <div>
+          <p class="eyebrow">DATA 467 | Linear Regression</p>
+          <h1>Predicting Airbnb Listing Prices in New York City</h1>
+          <p class="lede">
+            A regression project asking which listing characteristics most strongly explain
+            Airbnb nightly prices across New York City's five boroughs.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="final-paper.pdf">Final paper</a>
+            <a class="button secondary" href="code/data_analysis.ipynb">Notebook</a>
+            <a class="button secondary" href="project-proposal.pdf">Proposal</a>
+            <a class="button secondary" href="data/AB_NYC_2019.csv">Dataset</a>
+          </div>
+        </div>
+        <figure class="hero-figure">
+          <img src="figures/logprice-boxplots.png" alt="Boxplots of log price by room type and borough group">
+        </figure>
+      </section>
+
+      <section class="metric-strip project-metrics" aria-label="Project highlights">
+        <div>
+          <span>48,895</span>
+          <p>raw listings</p>
+        </div>
+        <div>
+          <span>38,833</span>
+          <p>cleaned listings</p>
+        </div>
+        <div>
+          <span>0.507</span>
+          <p>best adjusted R2</p>
+        </div>
+        <div>
+          <span>$101</span>
+          <p>median nightly price</p>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <div class="content-grid">
+          <article>
+            <h2>Project Overview</h2>
+            <p>
+              Airbnb prices reflect more than a host's chosen number. In New York City, price varies
+              with room type, borough demand, review activity, host scale, and yearly availability.
+              This project models nightly price using the 2019 NYC Airbnb open dataset.
+            </p>
+            <p>
+              Because raw price is strongly right-skewed, the main response is log(price).
+              The final analysis uses ordinary least squares regression, interaction terms, diagnostics,
+              and a logistic high-price check.
+            </p>
+          </article>
+
+          <aside class="summary-card">
+            <h2>Main Finding</h2>
+            <p>
+              Room type and borough location dominate the pricing structure. Entire-home listings carry
+              a large premium over private rooms, and Manhattan listings show a clear location premium
+              over Brooklyn.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <h2>Modeling Strategy</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Specification</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Model 1</td>
+                <td>log(price) using room type and borough</td>
+                <td>Test whether the strongest structural factors explain price patterns.</td>
+              </tr>
+              <tr>
+                <td>Model 2</td>
+                <td>Add minimum nights, reviews, host listing count, and availability</td>
+                <td>Check whether listing activity variables change the main story.</td>
+              </tr>
+              <tr>
+                <td>Model 3</td>
+                <td>Add room type by borough interaction and log-transform skewed predictors</td>
+                <td>Improve predictive flexibility while keeping the model interpretable.</td>
+              </tr>
+              <tr>
+                <td>Logistic GLM</td>
+                <td>Predict whether price is above the cleaned-sample median</td>
+                <td>Confirm whether the same predictors separate high-price listings.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <h2>OLS Model Comparison</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Adjusted R2</th>
+                <th>AIC</th>
+                <th>BIC</th>
+                <th>RMSE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Model 1</td>
+                <td>0.480</td>
+                <td>53000.55</td>
+                <td>53060.52</td>
+                <td>0.4787</td>
+              </tr>
+              <tr>
+                <td>Model 2</td>
+                <td>0.498</td>
+                <td>51591.63</td>
+                <td>51694.43</td>
+                <td>0.4700</td>
+              </tr>
+              <tr>
+                <td>Model 3</td>
+                <td><strong>0.507</strong></td>
+                <td><strong>50910.83</strong></td>
+                <td><strong>51082.17</strong></td>
+                <td><strong>0.4658</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Model 3 had the best overall fit, but the improvement over Model 2 was moderate.
+          The main interpretation stayed stable: location and room type drove most of the signal.
+        </p>
+      </section>
+
+      <section class="section content-section">
+        <h2>Key Results</h2>
+        <div class="result-grid">
+          <article class="result-panel">
+            <span>118.0%</span>
+            <h3>Entire-home premium</h3>
+            <p>In Model 2, entire-home listings were about 118% higher than private rooms on the expected price scale.</p>
+          </article>
+          <article class="result-panel">
+            <span>35.6%</span>
+            <h3>Manhattan premium</h3>
+            <p>Manhattan listings were about 35.6% higher than Brooklyn listings after controls.</p>
+          </article>
+          <article class="result-panel">
+            <span>$207</span>
+            <h3>Example prediction</h3>
+            <p>The notebook predicted about $207 for a representative Manhattan entire-home listing, with a wide interval.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <h2>Visual Evidence</h2>
+        <div class="figure-grid">
+          <figure>
+            <img src="figures/price-logprice-histograms.png" alt="Histograms of raw price and log price">
+            <figcaption>Log transformation reduces the extreme right skew in raw price.</figcaption>
+          </figure>
+          <figure>
+            <img src="figures/logprice-boxplots.png" alt="Boxplots of log price by room type and borough">
+            <figcaption>Entire homes and Manhattan listings have visibly higher central log prices.</figcaption>
+          </figure>
+          <figure>
+            <img src="figures/numeric-predictor-patterns.png" alt="Scatterplots and correlation matrix for numeric predictors">
+            <figcaption>Numeric activity variables add signal, but their linear patterns are weaker.</figcaption>
+          </figure>
+          <figure>
+            <img src="figures/model-diagnostics.png" alt="Diagnostic plots for the final OLS model">
+            <figcaption>Diagnostics support broad pattern analysis, with tail departures and mild heteroscedasticity.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <h2>Files</h2>
+        <div class="file-grid">
+          <a href="final-paper.pdf">Final paper</a>
+          <a href="project-proposal.pdf">Project proposal</a>
+          <a href="code/data_analysis.ipynb">Analysis notebook</a>
+          <a href="data/AB_NYC_2019.csv">Original dataset</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Lei Duli</p>
+      <div>
+        <a href="../../">Portfolio home</a>
+        <a href="https://github.com/RonnyGotTheWay" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </footer>
+  </body>
+</html>

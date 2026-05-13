@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Lei Duli's data science portfolio: statistical modeling, machine learning, and applied analytics projects.">
+    <meta name="description" content="Lei Duli's data science portfolio: statistical modeling, regression, machine learning, and applied analytics projects.">
     <title>Lei Duli | Data Science Portfolio</title>
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -20,31 +20,40 @@
     <main id="top">
       <section class="hero section">
         <div class="hero-copy">
-          <p class="eyebrow">Data analytics | Statistical modeling | Machine learning</p>
-          <h1>Turning behavior data into models people can actually use.</h1>
+          <p class="eyebrow">Statistics | Regression | Machine learning</p>
+          <h1>Data projects with the evaluation built in.</h1>
           <p class="lede">
-            I am a statistics student at the University of Arizona building projects across predictive modeling,
-            imbalanced classification, data preprocessing, and applied machine learning.
+            I am Lei Duli, a statistics student at the University of Arizona. I build reproducible
+            analysis projects that connect modeling choices, diagnostics, and real-world interpretation.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#projects">View projects</a>
-            <a class="button secondary" href="https://github.com/RonnyGotTheWay" target="_blank" rel="noreferrer">GitHub profile</a>
+            <a class="button secondary" href="mailto:leiduli@arizona.edu">Contact me</a>
           </div>
         </div>
-        <aside class="profile-panel" aria-label="Profile snapshot">
-          <img src="https://avatars.githubusercontent.com/u/248307706?v=4" alt="Lei Duli GitHub avatar">
-          <div>
-            <p class="profile-name">Lei Duli</p>
-            <p class="profile-role">Statistics undergraduate</p>
-            <p class="profile-meta">University of Arizona</p>
+
+        <aside class="hero-visual" aria-label="Portfolio snapshot">
+          <div class="visual-image">
+            <img src="projects/stat-467-airbnb-nyc/figures/logprice-boxplots.png" alt="Airbnb log price boxplots by room type and borough">
+          </div>
+          <div class="visual-profile">
+            <img src="https://avatars.githubusercontent.com/u/248307706?v=4" alt="Lei Duli GitHub avatar">
+            <div>
+              <p class="profile-name">Lei Duli</p>
+              <p class="profile-role">Statistics undergraduate</p>
+            </div>
           </div>
         </aside>
       </section>
 
       <section class="metric-strip" aria-label="Portfolio highlights">
         <div>
-          <span>6</span>
-          <p>model families compared</p>
+          <span>48,895</span>
+          <p>Airbnb listings analyzed</p>
+        </div>
+        <div>
+          <span>0.507</span>
+          <p>best adjusted R2</p>
         </div>
         <div>
           <span>0.922</span>
@@ -59,62 +68,92 @@
       <section id="projects" class="section">
         <div class="section-heading">
           <p class="eyebrow">Featured work</p>
-          <h2>Projects</h2>
+          <h2>Selected Projects</h2>
+          <p>
+            Course projects turned into portfolio pieces: clear questions, reproducible code,
+            model comparison, diagnostics, and reports.
+          </p>
         </div>
 
-        <article class="featured-project">
-          <div class="project-main">
-            <p class="project-kicker">STAT 474 | Modeling Strategy and Evaluation</p>
-            <h3>From Browsing to Buying: Predicting Online Purchase Intention</h3>
-            <p>
-              An end-to-end machine learning project using the UCI Online Shoppers Purchasing Intention Dataset
-              to predict whether an e-commerce session will end in purchase. I focused on model selection,
-              cross-validation design, threshold strategy, final test-set evaluation, and sensitivity analysis.
-            </p>
-            <div class="tag-row" aria-label="Project methods">
-              <span>R</span>
-              <span>caret</span>
-              <span>Random Forest</span>
-              <span>Gradient Boosting</span>
-              <span>ROC AUC</span>
-              <span>F1</span>
+        <div class="featured-grid">
+          <article class="project-card feature-card">
+            <a class="project-media" href="projects/stat-467-airbnb-nyc/index.html">
+              <img src="projects/stat-467-airbnb-nyc/figures/logprice-boxplots.png" alt="Boxplots of Airbnb log price by room type and borough">
+            </a>
+            <div class="project-body">
+              <p class="project-kicker">DATA 467 | Linear Regression</p>
+              <h3>Predicting Airbnb Listing Prices in New York City</h3>
+              <p>
+                A hedonic price modeling project using 2019 NYC Airbnb listings to explain
+                nightly price through room type, borough, review activity, host scale, and availability.
+              </p>
+              <div class="mini-metrics">
+                <span><strong>38,833</strong> cleaned listings</span>
+                <span><strong>0.507</strong> best adj. R2</span>
+                <span><strong>118%</strong> entire-home premium</span>
+              </div>
+              <div class="tag-row" aria-label="Airbnb project methods">
+                <span>Python</span>
+                <span>OLS</span>
+                <span>GLM</span>
+                <span>Diagnostics</span>
+                <span>Hedonic pricing</span>
+              </div>
+              <div class="link-row">
+                <a href="projects/stat-467-airbnb-nyc/index.html">Project page</a>
+                <a href="projects/stat-467-airbnb-nyc/code/data_analysis.ipynb">Notebook</a>
+                <a href="projects/stat-467-airbnb-nyc/final-paper.pdf">Final paper</a>
+                <a href="projects/stat-467-airbnb-nyc/project-proposal.pdf">Proposal</a>
+              </div>
             </div>
-            <div class="link-row">
-              <a href="projects/stat-474-online-shoppers/index.html">Project page</a>
-              <a href="projects/stat-474-online-shoppers/online_shoppers_analysis.R">R code</a>
-              <a href="projects/stat-474-online-shoppers/final-report.pdf">Final report</a>
-              <a href="projects/stat-474-online-shoppers/proposal.pdf">Proposal</a>
-            </div>
-          </div>
-          <div class="project-results" aria-label="Project results">
-            <div>
-              <span>0.667</span>
-              <p>Random Forest F1</p>
-            </div>
-            <div>
-              <span>0.922</span>
-              <p>Gradient Boosting ROC AUC</p>
-            </div>
-            <div>
-              <span>15.5%</span>
-              <p>purchase class share</p>
-            </div>
-          </div>
-        </article>
+          </article>
 
-        <div class="project-grid">
+          <article class="project-card feature-card">
+            <a class="project-media" href="projects/stat-474-online-shoppers/index.html">
+              <img src="projects/stat-474-online-shoppers/figures/model-performance.png" alt="Model performance chart for online purchase intention project">
+            </a>
+            <div class="project-body">
+              <p class="project-kicker">STAT 474 | Modeling Strategy and Evaluation</p>
+              <h3>From Browsing to Buying: Predicting Online Purchase Intention</h3>
+              <p>
+                A machine learning classification project using e-commerce session behavior to
+                predict purchase intent under strong class imbalance.
+              </p>
+              <div class="mini-metrics">
+                <span><strong>6</strong> model families</span>
+                <span><strong>0.667</strong> best F1</span>
+                <span><strong>0.922</strong> best ROC AUC</span>
+              </div>
+              <div class="tag-row" aria-label="Online shoppers project methods">
+                <span>R</span>
+                <span>caret</span>
+                <span>Random Forest</span>
+                <span>Gradient Boosting</span>
+                <span>F1 thresholding</span>
+              </div>
+              <div class="link-row">
+                <a href="projects/stat-474-online-shoppers/index.html">Project page</a>
+                <a href="projects/stat-474-online-shoppers/online_shoppers_analysis.R">R code</a>
+                <a href="projects/stat-474-online-shoppers/final-report.pdf">Final report</a>
+                <a href="projects/stat-474-online-shoppers/proposal.pdf">Proposal</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="project-grid compact-grid">
           <article class="project-card">
             <p class="project-kicker">Data preprocessing</p>
             <h3>Large-Scale Data Preprocessing and Feature Discretization</h3>
             <p>
-              Cleaned and transformed a real-world used-car transaction dataset into structured, model-ready
-              inputs through missing value handling, outlier detection, discretization, and encoding.
+              Prepared a used-car transaction dataset through missing value handling,
+              outlier detection, discretization, and encoding.
             </p>
             <div class="tag-row">
               <span>Python</span>
               <span>pandas</span>
               <span>scikit-learn</span>
-              <span>feature engineering</span>
+              <span>Feature engineering</span>
             </div>
           </article>
 
@@ -122,14 +161,14 @@
             <p class="project-kicker">Research synthesis</p>
             <h3>Heuristic Optimization of LSTM-Based Models</h3>
             <p>
-              Reviewed PSO, GA, SA, and ACO optimization strategies for LSTM-based time-series forecasting
-              across energy, transportation, finance, and weather domains.
+              Reviewed PSO, GA, SA, and ACO optimization strategies for LSTM-based
+              forecasting across applied time-series domains.
             </p>
             <div class="tag-row">
               <span>LSTM</span>
               <span>PSO</span>
               <span>GA</span>
-              <span>time series</span>
+              <span>Time series</span>
             </div>
           </article>
         </div>
@@ -147,15 +186,15 @@
           </div>
           <div>
             <h3>Data work</h3>
-            <p>EDA, cleaning, feature engineering, visualization</p>
+            <p>EDA, cleaning, feature engineering, visualization, reporting</p>
           </div>
           <div>
             <h3>Modeling</h3>
-            <p>Logistic regression, LASSO, PCA, random forest, gradient boosting, SVM</p>
+            <p>OLS, GLM, logistic regression, LASSO, PCA, random forest, gradient boosting, SVM</p>
           </div>
           <div>
             <h3>Evaluation</h3>
-            <p>Cross-validation, ROC AUC, F1, precision, recall, balanced accuracy</p>
+            <p>Cross-validation, diagnostics, ROC AUC, F1, precision, recall, balanced accuracy</p>
           </div>
         </div>
       </section>
