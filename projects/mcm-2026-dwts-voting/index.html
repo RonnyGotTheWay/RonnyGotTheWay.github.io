@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="2026 MCM Problem C audience vote estimation and fairness optimization project by Lei Duli.">
+    <title>2026 MCM Problem C: Audience Vote Estimation and Fairness Optimization | Lei Duli</title>
+    <link rel="stylesheet" href="../../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../../">Lei Duli</a>
+      <nav aria-label="Primary navigation">
+        <a href="../../#projects">Projects</a>
+        <a href="../../#skills">Skills</a>
+        <a href="../../#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section project-hero split-hero">
+        <div>
+          <p class="eyebrow">2026 MCM/ICM | Mathematical Modeling</p>
+          <h1>2026 MCM Problem C: Audience Vote Estimation and Fairness Optimization</h1>
+          <p class="lede">
+            A mathematical modeling project for Dancing with the Stars, focused on hidden audience
+            vote estimation, voting-rule comparison, contestant-factor analysis, and scoring-system redesign.
+          </p>
+          <p class="project-meta">
+            Competition: 2026 MCM/ICM Problem C | Award: Successful Participant (S Award) | Role: Coding Member / Code Lead
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="files/mcm-2026-problem-c-report.pdf">Final paper</a>
+            <a class="button secondary" href="#files">Code notebooks</a>
+            <a class="button secondary" href="../../#projects">Back to projects</a>
+          </div>
+        </div>
+        <figure class="hero-figure dashboard-figure" aria-label="Modeling dashboard illustration">
+          <div class="modeling-dashboard">
+            <div class="dashboard-node primary">
+              <span>XGBoost Model</span>
+              <strong>0.8106 AUC</strong>
+            </div>
+            <div class="dashboard-node">
+              <span>Audience Support</span>
+              <strong>Vote Proxy</strong>
+            </div>
+            <div class="dashboard-node">
+              <span>Rule Comparison</span>
+              <strong>Rank vs. %</strong>
+            </div>
+            <div class="dashboard-node">
+              <span>STARS System</span>
+              <strong>91.86%</strong>
+            </div>
+            <div class="dashboard-node accent">
+              <span>Fairness Correction</span>
+              <strong>Adjusted Ranking</strong>
+            </div>
+          </div>
+        </figure>
+      </section>
+
+      <section class="metric-strip project-metrics" aria-label="Project highlights">
+        <div>
+          <span>S Award</span>
+          <p>Successful Participant</p>
+        </div>
+        <div>
+          <span>0.8106</span>
+          <p>average XGBoost AUC</p>
+        </div>
+        <div>
+          <span>69.23%</span>
+          <p>bottom-2 hit rate</p>
+        </div>
+        <div>
+          <span>91.86%</span>
+          <p>STARS backtesting accuracy</p>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <div class="content-grid">
+          <article>
+            <h2>Overview</h2>
+            <p>
+              This project addresses the lack of public audience voting data in Dancing with the Stars.
+              We built a data-driven framework to estimate audience support from judge scores and weekly
+              elimination outcomes, compare voting integration mechanisms, quantify the effects of contestant
+              characteristics and dance partner pairing, and propose a fairer scoring system.
+            </p>
+          </article>
+
+          <aside class="summary-card">
+            <h2>Decision-Support Focus</h2>
+            <p>
+              The workflow connects interpretable machine learning, leakage-aware validation, statistical
+              comparison, and fairness-oriented scoring design into one reproducible modeling pipeline.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <article class="summary-card role-highlight">
+          <p class="eyebrow">Project contribution</p>
+          <h2>My Role: Coding Member / Code Lead</h2>
+          <p>
+            I led the code implementation and data modeling workflow, turning raw weekly competition records
+            into analysis-ready modeling tables and reproducible evaluation outputs.
+          </p>
+          <ul class="role-list">
+            <li>Cleaned and preprocessed historical competition data for modeling.</li>
+            <li>Converted wide weekly judge-score data into long-format weekly contestant records.</li>
+            <li>Engineered features for weekly performance, score stability, partner strength, and controversial performances.</li>
+            <li>Implemented XGBoost-based elimination-risk modeling with out-of-fold prediction and leakage-aware validation.</li>
+            <li>Built ranking-based and percentage-based voting integration mechanisms for rule comparison.</li>
+            <li>Produced statistical comparisons, visualizations, and model interpretation outputs.</li>
+            <li>Implemented and backtested the STARS scoring framework for fairness-oriented scoring design.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section content-section">
+        <h2>Modeling Pipeline</h2>
+        <div class="project-grid">
+          <article class="project-card">
+            <p class="project-kicker">Module 1</p>
+            <h3>Audience Vote Estimation</h3>
+            <p>
+              Cleaned historical data across 34 seasons and 421 contestants. Constructed weekly features
+              from judge scores, contestant background, partner information, and performance controversy.
+              Used XGBoost to estimate elimination risk and converted it into an audience-support proxy.
+            </p>
+          </article>
+          <article class="project-card">
+            <p class="project-kicker">Module 2</p>
+            <h3>Voting Rule Comparison</h3>
+            <p>
+              Compared ranking-based and percentage-based vote integration methods. Evaluated prediction
+              accuracy, fan-vote dependence, and elimination consistency, finding that the ranking method
+              performed better in elimination prediction.
+            </p>
+          </article>
+          <article class="project-card">
+            <p class="project-kicker">Module 3</p>
+            <h3>Contestant and Partner Effect Analysis</h3>
+            <p>
+              Used regression and group comparison to study the effects of age, industry background, fan
+              support, and professional-dancer pairing. Younger contestants, performance-related backgrounds,
+              and effective partner matching were associated with better outcomes.
+            </p>
+          </article>
+          <article class="project-card">
+            <p class="project-kicker">Module 4</p>
+            <h3>STARS Scoring System</h3>
+            <p>
+              Proposed STARS: Scoring Through Adjusted Ranking System. Combined technical score, audience
+              score, progress score, and dispute adjustment, with dynamic weighting, fairness correction,
+              and protection mechanisms.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <h2>Key Results</h2>
+        <div class="result-grid">
+          <article class="result-panel">
+            <span>0.8106</span>
+            <h3>XGBoost AUC</h3>
+            <p>Average AUC for the elimination-risk model across validation folds.</p>
+          </article>
+          <article class="result-panel">
+            <span>45.70%</span>
+            <h3>Elimination accuracy</h3>
+            <p>Share of weekly eliminations correctly predicted by the risk model.</p>
+          </article>
+          <article class="result-panel">
+            <span>69.23%</span>
+            <h3>Bottom-2 hit rate</h3>
+            <p>How often the true eliminated contestant appeared in the model's bottom-2 risk set.</p>
+          </article>
+          <article class="result-panel">
+            <span>52.24% vs. 48.06%</span>
+            <h3>Voting-rule accuracy</h3>
+            <p>Ranking-based vote integration outperformed the percentage-based method in prediction accuracy.</p>
+          </article>
+          <article class="result-panel">
+            <span>0.0012</span>
+            <h3>Judge-fan discrepancy</h3>
+            <p>Paired t-test p-value indicating a systematic gap between judge rankings and fan rankings.</p>
+          </article>
+          <article class="result-panel">
+            <span>0.7388</span>
+            <h3>Factor regression R2</h3>
+            <p>Contestant-factor regression captured a substantial share of outcome variation.</p>
+          </article>
+          <article class="result-panel">
+            <span>91.86%</span>
+            <h3>STARS backtest</h3>
+            <p>Historical backtesting accuracy for the proposed STARS scoring framework.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <h2>Technical Stack</h2>
+        <div class="tag-row" aria-label="MCM project technical stack">
+          <span>Python</span>
+          <span>pandas</span>
+          <span>NumPy</span>
+          <span>scikit-learn</span>
+          <span>XGBoost</span>
+          <span>SHAP</span>
+          <span>statsmodels</span>
+          <span>matplotlib</span>
+          <span>Feature Engineering</span>
+          <span>Cross-Validation</span>
+          <span>Statistical Testing</span>
+          <span>Model Interpretation</span>
+        </div>
+      </section>
+
+      <section id="files" class="section content-section">
+        <h2>Files and Code</h2>
+        <div class="file-grid">
+          <a href="files/mcm-2026-problem-c-report.pdf">Final Paper</a>
+          <a href="files/features-engineering.ipynb">Feature Engineering Notebook</a>
+          <a href="files/voting-rules-comparison.ipynb">Voting Rules Notebook</a>
+          <a href="files/contestant-factor-analysis.ipynb">Contestant Factor Analysis Notebook</a>
+          <a href="files/stars-scoring-system.ipynb">STARS Scoring Notebook</a>
+          <a href="files/baseline-modeling.ipynb">Baseline Modeling Notebook</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Lei Duli</p>
+      <div>
+        <a href="../../">Portfolio home</a>
+        <a href="https://github.com/RonnyGotTheWay" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </footer>
+  </body>
+</html>

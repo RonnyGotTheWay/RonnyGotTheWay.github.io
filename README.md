@@ -16,6 +16,26 @@ I am a statistics student at the University of Arizona with strong interests in 
 
 ## Featured Projects
 
+### 2026 MCM Problem C: Audience Vote Estimation and Fairness Optimization
+
+**Course/Competition:** 2026 MCM/ICM Problem C<br>
+**Role:** Coding Member / Code Lead<br>
+**Tools:** Python, pandas, NumPy, scikit-learn, XGBoost, SHAP, statsmodels, matplotlib<br>
+**Project page:** [2026 MCM Problem C](projects/mcm-2026-dwts-voting/index.html)
+
+This project builds a data-driven framework for Dancing with the Stars to estimate hidden audience support, compare ranking-based and percentage-based voting mechanisms, analyze contestant and partner effects, and propose the STARS scoring system.
+
+| Result | Value |
+| --- | --- |
+| Award | **Successful Participant, S Award** |
+| XGBoost AUC | **0.8106** |
+| Elimination Accuracy | **45.70%** |
+| Bottom-2 Hit Rate | **69.23%** |
+| Ranking vs Percentage Accuracy | **52.24% vs 48.06%** |
+| STARS Backtesting Accuracy | **91.86%** |
+
+Links: [Project page](projects/mcm-2026-dwts-voting/index.html) | [Final paper](projects/mcm-2026-dwts-voting/files/mcm-2026-problem-c-report.pdf) | [Notebooks](projects/mcm-2026-dwts-voting/index.html#files)
+
 ### Predicting Airbnb Listing Prices in New York City
 
 **Course:** DATA 467 / Linear Regression<br>
