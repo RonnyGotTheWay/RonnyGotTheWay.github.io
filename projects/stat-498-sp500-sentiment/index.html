@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="DATA 498 S&P 500 financial news sentiment project by Lei Duli.">
+    <title>S&amp;P 500 News Sentiment | Lei Duli</title>
+    <link rel="stylesheet" href="../../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../../">Lei Duli</a>
+      <nav aria-label="Primary navigation">
+        <a href="../../#projects">Projects</a>
+        <a href="../../#skills">Skills</a>
+        <a href="../../#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section project-hero split-hero">
+        <div>
+          <p class="eyebrow">DATA 498 | Written Report</p>
+          <h1>Does Financial News Sentiment Move the S&amp;P 500?</h1>
+          <p class="lede">
+            A capstone project testing whether daily financial news sentiment contains useful
+            signal for next-day S&amp;P 500 direction and long/flat trading rules. My role centered
+            on the written report and presentation narrative.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="report/final-report.pdf">Written report</a>
+            <a class="button secondary" href="https://github.com/Guojiawei-01/sp500" target="_blank" rel="noreferrer">Source repo</a>
+            <a class="button secondary" href="https://github.com/Guojiawei-01/sp500/tree/main/presentation" target="_blank" rel="noreferrer">Presentation</a>
+            <a class="button secondary" href="proposal.pdf">Proposal</a>
+          </div>
+        </div>
+        <figure class="hero-figure">
+          <img src="figures/sentiment-method-comparison.png" alt="Sentiment feature comparison for S&P 500 direction models">
+        </figure>
+      </section>
+
+      <section class="metric-strip project-metrics" aria-label="Project highlights">
+        <div>
+          <span>19,127</span>
+          <p>raw headline rows</p>
+        </div>
+        <div>
+          <span>3,506</span>
+          <p>prepared daily rows</p>
+        </div>
+        <div>
+          <span>51.4%</span>
+          <p>best balanced accuracy</p>
+        </div>
+        <div>
+          <span>13.1%</span>
+          <p>FinBERT test return</p>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <div class="content-grid">
+          <article>
+            <h2>Project Overview</h2>
+            <p>
+              This project studies whether financial news headlines from 2008 to 2024 contain
+              enough information to explain or predict the next trading day's S&amp;P 500 direction.
+              The workflow aggregates headline text to daily features, adds macro context, compares
+              sentiment methods, and evaluates whether predictions survive realistic backtesting checks.
+            </p>
+            <p>
+              The final conclusion is deliberately cautious: simple sentiment relationships are weak,
+              classification models stay close to baseline, and backtest gains are sensitive to thresholds,
+              costs, and market regimes.
+            </p>
+          </article>
+
+          <aside class="summary-card">
+            <h2>My Role</h2>
+            <p>
+              I worked on the checklist item <strong>Written report</strong>, and the current source
+              contribution file lists Duli Lei as writing and presentation lead.
+            </p>
+            <ul class="role-list">
+              <li>Shaped the report narrative and final takeaways.</li>
+              <li>Organized figures into a readable evidence flow.</li>
+              <li>Kept the conclusion cautious about fragile trading signals.</li>
+              <li>Helped prepare the presentation flow and dashboard materials.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <h2>Repository Content I Identified</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Area</th>
+                <th>What the repository contains</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Data</td>
+                <td>S&amp;P 500 headline dataset, daily aggregation outputs, FRED macro variables, and processed modeling tables.</td>
+              </tr>
+              <tr>
+                <td>Sentiment</td>
+                <td>Dictionary baseline, VADER, FinBERT probabilities, and LDA topic distributions.</td>
+              </tr>
+              <tr>
+                <td>Modeling</td>
+                <td>Logistic Regression and XGBoost direction models with time-aware train, validation, and test splits.</td>
+              </tr>
+              <tr>
+                <td>Evaluation</td>
+                <td>Validation-selected thresholds, balanced accuracy, AUC, calibrated probabilities, backtests, regime checks, and robustness tests.</td>
+              </tr>
+              <tr>
+                <td>Presentation</td>
+                <td>Static presentation dashboard, exported figures, and a recorded group presentation video.</td>
+              </tr>
+              <tr>
+                <td>Deliverables</td>
+                <td>README, data dictionary, notebooks, scripts, figures, final written report, proposal, presentation files, and contribution notes.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <h2>Key Results</h2>
+        <div class="result-grid">
+          <article class="result-panel">
+            <span>51.4%</span>
+            <h3>Best balanced accuracy</h3>
+            <p>XGBoost with VADER features produced the best test balanced accuracy, but the gain over baseline was small.</p>
+          </article>
+          <article class="result-panel">
+            <span>13.1%</span>
+            <h3>FinBERT logistic backtest</h3>
+            <p>One sentiment-specific strategy beat buy-and-hold in the test period, but the report treats this as fragile.</p>
+          </article>
+          <article class="result-panel">
+            <span>0.022</span>
+            <h3>Weak sentiment direction link</h3>
+            <p>Average finance sentiment had only a small correlation with next-day direction.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <h2>Visual Evidence</h2>
+        <div class="figure-grid">
+          <figure>
+            <img src="figures/sentiment-method-comparison.png" alt="Test AUC and balanced accuracy by sentiment feature set">
+            <figcaption>Most direction models stayed close to the 0.50 baseline.</figcaption>
+          </figure>
+          <figure>
+            <img src="figures/roc-test.png" alt="ROC curves for held-out test set">
+            <figcaption>Held-out ROC curves show only limited ranking power.</figcaption>
+          </figure>
+          <figure>
+            <img src="figures/backtest-equity-curves.png" alt="Long flat equity curves for test set">
+            <figcaption>All-feature long/flat strategies looked very similar to buy-and-hold in the test window.</figcaption>
+          </figure>
+          <figure>
+            <img src="figures/regime-backtest-returns.png" alt="Regime-level backtest returns">
+            <figcaption>Regime analysis showed that apparent signals were unstable across market environments.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <h2>Files</h2>
+        <div class="file-grid">
+          <a href="report/final-report.pdf">Written report</a>
+          <a href="proposal.pdf">Proposal</a>
+          <a href="source-readme.md">Source README copy</a>
+          <a href="https://github.com/Guojiawei-01/sp500/blob/main/CONTRIBUTIONS.md" target="_blank" rel="noreferrer">Contribution file</a>
+          <a href="https://github.com/Guojiawei-01/sp500/tree/main/presentation" target="_blank" rel="noreferrer">Presentation folder</a>
+          <a href="https://github.com/Guojiawei-01/sp500" target="_blank" rel="noreferrer">GitHub repository</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Lei Duli</p>
+      <div>
+        <a href="../../">Portfolio home</a>
+        <a href="https://github.com/RonnyGotTheWay" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </footer>
+  </body>
+</html>

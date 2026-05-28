@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Data Fest healthcare analytics project on chronic disease care pathways by Lei Duli.">
+    <title>Data Fest: Sequence-Based Segmentation of Chronic Disease Care Pathways | Lei Duli</title>
+    <link rel="stylesheet" href="../../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../../">Lei Duli</a>
+      <nav aria-label="Primary navigation">
+        <a href="../../#projects">Projects</a>
+        <a href="../../#skills">Skills</a>
+        <a href="../../#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section project-hero split-hero">
+        <div>
+          <p class="eyebrow">Data Fest | Healthcare Analytics</p>
+          <h1>Data Fest: Sequence-Based Segmentation of Chronic Disease Care Pathways</h1>
+          <p class="lede">
+            A healthcare data science project identifying chronic disease care pathways and detecting
+            high-risk patients who silently disengage from routine care before returning through acute services.
+          </p>
+          <p class="project-meta">
+            Competition: Data Fest | Award: Best Insights Award | Team: 07V, CUEB | Role: Data Analysis / Pipeline Implementation
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="files/datafest-team07v-paper.docx">Project paper</a>
+            <a class="button secondary" href="files/analysis_pipeline.py">Analysis pipeline</a>
+            <a class="button secondary" href="README.md">Project README</a>
+            <a class="button secondary" href="../../#projects">Back to projects</a>
+          </div>
+        </div>
+        <figure class="hero-figure dashboard-figure" aria-label="Chronic care pathway dashboard illustration">
+          <div class="care-pathway-dashboard">
+            <div class="care-flow">
+              <span class="care-event routine">1</span>
+              <span class="care-line"></span>
+              <span class="care-event specialist">2</span>
+              <span class="care-line silence"></span>
+              <span class="care-event gap">0</span>
+              <span class="care-line acute"></span>
+              <span class="care-event acute">3</span>
+            </div>
+            <div class="care-dashboard-grid">
+              <div class="dashboard-node primary">
+                <span>Best Insight</span>
+                <strong>Silence window</strong>
+              </div>
+              <div class="dashboard-node">
+                <span>Patients</span>
+                <strong>46,714</strong>
+              </div>
+              <div class="dashboard-node">
+                <span>Clusters</span>
+                <strong>4 pathways</strong>
+              </div>
+              <div class="dashboard-node accent">
+                <span>Cluster 2</span>
+                <strong>59% acute return</strong>
+              </div>
+            </div>
+          </div>
+        </figure>
+      </section>
+
+      <section class="metric-strip project-metrics" aria-label="Project highlights">
+        <div>
+          <span>Best Insights</span>
+          <p>Data Fest Award</p>
+        </div>
+        <div>
+          <span>46,714</span>
+          <p>chronic disease patients</p>
+        </div>
+        <div>
+          <span>3,073,410</span>
+          <p>unique encounters</p>
+        </div>
+        <div>
+          <span>59%</span>
+          <p>silence-to-acute risk in Cluster 2</p>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <div class="content-grid">
+          <article>
+            <h2>Overview</h2>
+            <p>
+              This project investigates whether patients with diabetes and hypertension follow distinct
+              longitudinal care pathways. The central question is whether a hidden subgroup of patients
+              silently disengages from routine care and later re-enters the health system through emergency
+              department or inpatient services. We transformed longitudinal encounter histories into
+              behavioral sequences, engineered patient-level features, applied clustering, and profiled
+              clinically meaningful patient segments.
+            </p>
+          </article>
+
+          <aside class="summary-card insight-card">
+            <p class="eyebrow">Award focus</p>
+            <h2>Best Insights Award</h2>
+            <p>
+              The analysis turned absence of care into an observable signal, making long silent periods
+              actionable from a chronic disease care management perspective.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <article class="summary-card role-highlight">
+          <p class="eyebrow">Project contribution</p>
+          <h2>My Role: Data Analysis and Pipeline Implementation</h2>
+          <p>
+            I implemented the core Python analysis pipeline and translated encounter-level healthcare
+            records into a patient segmentation workflow that could support operational interpretation.
+          </p>
+          <ul class="role-list">
+            <li>Cleaned and deduplicated encounter-level healthcare records.</li>
+            <li>Converted patient encounter histories into event sequences.</li>
+            <li>Inserted a silence marker when gaps between visits exceeded 90 days.</li>
+            <li>Engineered patient-level features measuring encounter volume, acute-care ratio, gap behavior, maximum silence duration, and silence-to-acute transition probability.</li>
+            <li>Standardized features and applied K-Means clustering.</li>
+            <li>Selected a four-cluster solution using the elbow method and clinical interpretability.</li>
+            <li>Generated cluster profiles, summary tables, and visualization outputs.</li>
+            <li>Translated analytical results into an operational insight for chronic disease care management.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section content-section">
+        <div class="content-grid">
+          <article>
+            <h2>Dataset and Preparation</h2>
+            <p>
+              The data came from the Stormont Vail Health integrated encounter master table and focused on
+              chronic disease patients with diabetes and hypertension from 2022-2025. The final analytic
+              table covered 46,714 patients and 3,073,410 unique encounters.
+            </p>
+            <p>
+              A key preparation issue was duplicate EncounterKey rows caused by diagnosis-level joins.
+              I deduplicated the data to one record per true encounter before sequence construction.
+              Without deduplication, visit frequency and gap metrics would be artificially inflated,
+              distorting the care pathway profiles.
+            </p>
+          </article>
+
+          <aside class="summary-card">
+            <h2>Preparation Summary</h2>
+            <ul class="role-list">
+              <li>Data source: Stormont Vail Health integrated encounter master table.</li>
+              <li>Population: chronic disease patients with diabetes and hypertension.</li>
+              <li>Time range: 2022-2025.</li>
+              <li>Scale: 46,714 patients and 3,073,410 unique encounters.</li>
+              <li>Decision: deduplicate EncounterKey records before sequence construction.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <h2>Analytical Design</h2>
+        <div class="project-grid">
+          <article class="project-card">
+            <p class="project-kicker">Module 1</p>
+            <h3>Sequence Construction</h3>
+            <p>
+              Encoded each encounter as a behavioral event: routine visit = 1, specialist visit = 2,
+              ED or inpatient acute-care event = 3, and silence marker = 0 when the gap between visits
+              exceeded 90 days. This treated absence of care as an analytically visible signal.
+            </p>
+          </article>
+          <article class="project-card">
+            <p class="project-kicker">Module 2</p>
+            <h3>Feature Engineering</h3>
+            <p>
+              Derived six patient-level features: total encounters, acute-care ratio, mean gap between
+              visits, gap variability, maximum silence duration, and probability that a silence period is
+              followed by an acute event.
+            </p>
+          </article>
+          <article class="project-card">
+            <p class="project-kicker">Module 3</p>
+            <h3>Clustering</h3>
+            <p>
+              Standardized the six features, applied K-Means clustering, selected a four-cluster solution
+              based on the elbow method and clinical interpretability, and generated cluster summaries and
+              visual diagnostics.
+            </p>
+          </article>
+          <article class="project-card">
+            <p class="project-kicker">Module 4</p>
+            <h3>Clinical Interpretation</h3>
+            <p>
+              Compared care pathway groups by encounter pattern, acute-care use, mortality, MyChart
+              activation, and SDOH risk indicators. The most operationally important subgroup was patients
+              with unstable post-silence acute return.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <h2>Key Results</h2>
+        <div class="result-grid">
+          <article class="result-panel">
+            <span>46,714</span>
+            <h3>Patients analyzed</h3>
+            <p>Chronic disease patients with diabetes and hypertension included in the pathway analysis.</p>
+          </article>
+          <article class="result-panel">
+            <span>3,073,410</span>
+            <h3>Unique encounters</h3>
+            <p>Deduplicated encounter records from 2022-2025 used to construct patient sequences.</p>
+          </article>
+          <article class="result-panel">
+            <span>4 clusters</span>
+            <h3>Care pathway groups</h3>
+            <p>K-Means separated patients into four clinically interpretable trajectory segments.</p>
+          </article>
+          <article class="result-panel">
+            <span>4.7%</span>
+            <h3>Cluster 2 size</h3>
+            <p>The acute-unstable subgroup was small but operationally important.</p>
+          </article>
+          <article class="result-panel">
+            <span>12.5%</span>
+            <h3>ED/inpatient ratio</h3>
+            <p>Cluster 2 showed the highest share of acute-care encounters.</p>
+          </article>
+          <article class="result-panel">
+            <span>7.3%</span>
+            <h3>Mortality rate</h3>
+            <p>Cluster 2 also carried the highest mortality rate across the four clusters.</p>
+          </article>
+          <article class="result-panel">
+            <span>71.7%</span>
+            <h3>MyChart activation</h3>
+            <p>Cluster 2 had the lowest digital activation rate, suggesting weaker routine engagement.</p>
+          </article>
+          <article class="result-panel">
+            <span>59%</span>
+            <h3>Silence-to-acute probability</h3>
+            <p>Nearly six in ten silence periods in Cluster 2 ended in ED or inpatient care.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <article class="summary-card insight-card main-insight">
+          <p class="eyebrow">Best insight</p>
+          <h2>Best Insight: Silence Is a Predictive Intervention Window</h2>
+          <p>
+            The strongest finding is that the highest-risk patients are not simply those with the most
+            visits. Instead, risk concentrates among patients whose care trajectories become unstable after
+            long silent periods. In the acute-unstable cluster, nearly six out of ten post-silence transitions
+            ended in emergency or inpatient care, suggesting that silence in the clinical record is not a
+            benign gap but a predictive intervention window.
+          </p>
+        </article>
+      </section>
+
+      <section class="section content-section">
+        <h2>Cluster Interpretation</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Cluster</th>
+                <th>Share</th>
+                <th>Interpretation</th>
+                <th>Operational signal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cluster 0</td>
+                <td>30.4%</td>
+                <td>High-touch continuous management with frequent visits and short gaps.</td>
+                <td>Very low probability of silence ending in acute care.</td>
+              </tr>
+              <tr>
+                <td>Cluster 1</td>
+                <td>53.2%</td>
+                <td>Stable management, the largest group, with moderate encounter volume.</td>
+                <td>Relatively low acute risk.</td>
+              </tr>
+              <tr>
+                <td>Cluster 2</td>
+                <td>4.7%</td>
+                <td>Acute-unstable post-silence return with highest ED/inpatient ratio and highest mortality.</td>
+                <td>Lowest MyChart activation and 59% probability that silence ends in acute care.</td>
+              </tr>
+              <tr>
+                <td>Cluster 3</td>
+                <td>11.6%</td>
+                <td>Low-engagement, long-silence group with very long silence periods.</td>
+                <td>Comparatively lower acute escalation than Cluster 2.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section content-section">
+        <h2>Technical Stack</h2>
+        <div class="tag-row" aria-label="Data Fest project technical stack">
+          <span>Python</span>
+          <span>pandas</span>
+          <span>NumPy</span>
+          <span>scikit-learn</span>
+          <span>K-Means</span>
+          <span>StandardScaler</span>
+          <span>PCA</span>
+          <span>matplotlib</span>
+          <span>seaborn</span>
+          <span>Healthcare Analytics</span>
+          <span>Sequence Analysis</span>
+          <span>Feature Engineering</span>
+          <span>Clustering</span>
+          <span>Patient Segmentation</span>
+        </div>
+      </section>
+
+      <section id="files" class="section content-section">
+        <h2>Files and Code</h2>
+        <div class="file-grid">
+          <a href="files/datafest-team07v-paper.docx">Project Paper</a>
+          <a href="files/analysis_pipeline.py">Analysis Pipeline</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Lei Duli</p>
+      <div>
+        <a href="../../">Portfolio home</a>
+        <a href="https://github.com/RonnyGotTheWay" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </footer>
+  </body>
+</html>

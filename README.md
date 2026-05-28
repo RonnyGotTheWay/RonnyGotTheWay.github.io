@@ -36,6 +36,50 @@ This project builds a data-driven framework for Dancing with the Stars to estima
 
 Links: [Project page](projects/mcm-2026-dwts-voting/index.html) | [Final paper](projects/mcm-2026-dwts-voting/files/mcm-2026-problem-c-report.pdf) | [Notebooks](projects/mcm-2026-dwts-voting/index.html#files)
 
+### Data Fest: Sequence-Based Segmentation of Chronic Disease Care Pathways
+
+**Competition:** Data Fest<br>
+**Award:** Best Insights Award<br>
+**Role:** Data Analysis / Pipeline Implementation<br>
+**Tools:** Python, pandas, NumPy, scikit-learn, K-Means, PCA, matplotlib, seaborn<br>
+**Project page:** [Data Fest Chronic Care Pathways](projects/datafest-2026-chronic-care-pathways/)<br>
+**Project README:** [README](projects/datafest-2026-chronic-care-pathways/README.md)
+
+This project identifies distinct longitudinal care pathways among chronic disease patients with diabetes and hypertension. We transformed encounter histories into behavioral sequences, inserted silence markers for care gaps longer than 90 days, engineered patient-level features, and used K-Means clustering to identify clinically meaningful patient segments.
+
+| Result                                    |               Value |
+| ----------------------------------------- | ------------------: |
+| Award                                     | Best Insights Award |
+| Patients analyzed                         |              46,714 |
+| Unique encounters                         |           3,073,410 |
+| Number of clusters                        |                   4 |
+| Acute-unstable cluster size               |                4.7% |
+| ED/inpatient ratio in Cluster 2           |               12.5% |
+| Mortality rate in Cluster 2               |                7.3% |
+| MyChart activation in Cluster 2           |               71.7% |
+| Silence-to-acute probability in Cluster 2 |                 59% |
+
+**Best insight:** The highest-risk patients were not simply those with the most visits. Risk concentrated among patients whose care trajectories became unstable after long silent periods. In the acute-unstable cluster, nearly six out of ten post-silence transitions ended in ED or inpatient care, making silence in the clinical record a predictive intervention window.
+
+### Does Financial News Sentiment Move the S&P 500?
+
+**Course:** DATA 498 / Capstone Project<br>
+**Focus:** Written report and presentation narrative<br>
+**Tools:** Python, VADER, FinBERT, LDA, Logistic Regression, XGBoost, backtesting<br>
+**Project page:** [S&P 500 News Sentiment](projects/stat-498-sp500-sentiment/index.html)
+
+This project tests whether daily financial news sentiment contains useful information for next-day S&P 500 direction. The repository includes cleaning, daily aggregation, sentiment methods, market context, predictive modeling, backtesting, regime evaluation, figures, a final report, and presentation materials. My contribution foregrounds the checklist item **Written report**, with narrative, figure organization, final takeaways, and presentation flow.
+
+| Result | Value |
+| --- | --- |
+| Raw headline rows | **19,127** |
+| Prepared daily rows | **3,506** |
+| Best balanced accuracy | **51.4%** |
+| Logit + FinBERT test return | **13.1%** versus **7.0%** buy-and-hold |
+| Main interpretation | Daily headline sentiment produced weak overall predictive signal; selected backtests were interesting but fragile. |
+
+Links: [Written report](projects/stat-498-sp500-sentiment/report/final-report.pdf) | [Proposal](projects/stat-498-sp500-sentiment/proposal.pdf) | [Presentation folder](https://github.com/Guojiawei-01/sp500/tree/main/presentation) | [Source repo](https://github.com/Guojiawei-01/sp500)
+
 ### Predicting Airbnb Listing Prices in New York City
 
 **Course:** DATA 467 / Linear Regression<br>

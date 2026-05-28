@@ -20,12 +20,17 @@
     <main id="top">
       <section class="hero section">
         <div class="hero-copy">
-          <p class="eyebrow">Statistics | Regression | Machine learning</p>
-          <h1>Data projects with the evaluation built in.</h1>
+          <p class="eyebrow">Statistics | Financial NLP | Model evaluation</p>
+          <h1>Data stories that stay honest after testing.</h1>
           <p class="lede">
             I am Lei Duli, a statistics student at the University of Arizona. I build reproducible
             analysis projects that connect modeling choices, diagnostics, and real-world interpretation.
           </p>
+          <div class="hero-badges" aria-label="Portfolio strengths">
+            <span>Written report lead</span>
+            <span>Reproducible notebooks</span>
+            <span>Model comparison</span>
+          </div>
           <div class="hero-actions">
             <a class="button primary" href="#projects">View projects</a>
             <a class="button secondary" href="mailto:leiduli@arizona.edu">Contact me</a>
@@ -34,7 +39,14 @@
 
         <aside class="hero-visual" aria-label="Portfolio snapshot">
           <div class="visual-image">
-            <img src="projects/stat-467-airbnb-nyc/figures/logprice-boxplots.png" alt="Airbnb log price boxplots by room type and borough">
+            <img src="projects/stat-498-sp500-sentiment/figures/backtest-equity-curves.png" alt="S&P 500 sentiment strategy equity curves">
+          </div>
+          <div class="visual-caption">
+            <p class="project-kicker">Latest capstone</p>
+            <h2>Does financial news sentiment move the S&amp;P 500?</h2>
+            <p>
+              19,127 headlines, finance-specific sentiment, model comparison, and a cautious written report.
+            </p>
           </div>
           <div class="visual-profile">
             <img src="https://avatars.githubusercontent.com/u/248307706?v=4" alt="Lei Duli GitHub avatar">
@@ -60,6 +72,22 @@
           <p>XGBoost AUC</p>
         </div>
         <div>
+          <span>Best Insights</span>
+          <p>Data Fest Award</p>
+        </div>
+        <div>
+          <span>46,714</span>
+          <p>chronic disease patients</p>
+        </div>
+        <div>
+          <span>59%</span>
+          <p>silence-to-acute transition risk</p>
+        </div>
+        <div>
+          <span>0.922</span>
+          <p>Online shopper ROC AUC</p>
+        </div>
+        <div>
           <span>91.86%</span>
           <p>STARS backtesting accuracy</p>
         </div>
@@ -70,7 +98,7 @@
           <p class="eyebrow">Featured work</p>
           <h2>Selected Projects</h2>
           <p>
-            Course projects turned into portfolio pieces: clear questions, reproducible code,
+            Competition and course projects turned into portfolio pieces: clear questions, reproducible code,
             model comparison, diagnostics, and reports.
           </p>
         </div>
@@ -127,6 +155,98 @@
                 <a href="projects/mcm-2026-dwts-voting/index.html">Project page</a>
                 <a href="projects/mcm-2026-dwts-voting/files/mcm-2026-problem-c-report.pdf">Final paper</a>
                 <a href="projects/mcm-2026-dwts-voting/index.html#files">Code notebooks</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card feature-card">
+            <a class="project-media care-card-media" href="projects/datafest-2026-chronic-care-pathways/" aria-label="Open Data Fest chronic care pathways project page">
+              <div class="care-pathway-dashboard">
+                <div class="care-flow">
+                  <span class="care-event routine">1</span>
+                  <span class="care-line"></span>
+                  <span class="care-event specialist">2</span>
+                  <span class="care-line silence"></span>
+                  <span class="care-event gap">0</span>
+                  <span class="care-line acute"></span>
+                  <span class="care-event acute">3</span>
+                </div>
+                <div class="care-dashboard-grid">
+                  <div class="dashboard-node primary">
+                    <span>Best Insights</span>
+                    <strong>Silence window</strong>
+                  </div>
+                  <div class="dashboard-node">
+                    <span>Patients</span>
+                    <strong>46,714</strong>
+                  </div>
+                  <div class="dashboard-node accent">
+                    <span>Acute return</span>
+                    <strong>59%</strong>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="project-body">
+              <p class="project-kicker">Data Fest | Healthcare Analytics</p>
+              <h3>From Silence to Acute Return</h3>
+              <p>
+                Built a Python sequence-analysis and clustering pipeline to identify chronic disease care
+                pathways, revealing a high-risk subgroup whose long silent periods often ended in emergency
+                or inpatient care.
+              </p>
+              <div class="mini-metrics">
+                <span><strong>Best Insights Award</strong></span>
+                <span><strong>46,714</strong> Patients</span>
+                <span><strong>3,073,410</strong> Encounters</span>
+                <span><strong>59%</strong> Silence-to-Acute</span>
+              </div>
+              <div class="tag-row" aria-label="Data Fest project methods">
+                <span>Python</span>
+                <span>K-Means</span>
+                <span>Healthcare Analytics</span>
+                <span>Sequence Analysis</span>
+                <span>Feature Engineering</span>
+                <span>Clustering</span>
+              </div>
+              <div class="link-row">
+                <a href="projects/datafest-2026-chronic-care-pathways/">Project page</a>
+                <a href="projects/datafest-2026-chronic-care-pathways/README.md">README</a>
+                <a href="projects/datafest-2026-chronic-care-pathways/files/datafest-team07v-paper.docx">Project paper</a>
+                <a href="projects/datafest-2026-chronic-care-pathways/files/analysis_pipeline.py">Analysis pipeline</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card feature-card">
+            <a class="project-media" href="projects/stat-498-sp500-sentiment/index.html">
+              <img src="projects/stat-498-sp500-sentiment/figures/sentiment-method-comparison.png" alt="S&P 500 sentiment model comparison chart">
+            </a>
+            <div class="project-body">
+              <p class="project-kicker">DATA 498 | Written Report / Presentation Narrative</p>
+              <h3>Does Financial News Sentiment Move the S&amp;P 500?</h3>
+              <p>
+                A capstone project testing whether daily financial news sentiment can explain or
+                predict next-day S&amp;P 500 movement across market regimes. My portfolio focus is the
+                written report: turning a fragile signal into a clear, appropriately cautious story.
+              </p>
+              <div class="mini-metrics">
+                <span><strong>19,127</strong> raw headlines</span>
+                <span><strong>51.4%</strong> best bal. accuracy</span>
+                <span><strong>13.1%</strong> FinBERT test return</span>
+              </div>
+              <div class="tag-row" aria-label="S&P 500 project methods">
+                <span>Python</span>
+                <span>FinBERT</span>
+                <span>VADER</span>
+                <span>XGBoost</span>
+                <span>Backtesting</span>
+              </div>
+              <div class="link-row">
+                <a href="projects/stat-498-sp500-sentiment/index.html">Project page</a>
+                <a href="projects/stat-498-sp500-sentiment/report/final-report.pdf">Written report</a>
+                <a href="https://github.com/Guojiawei-01/sp500/tree/main/presentation" target="_blank" rel="noreferrer">Presentation assets</a>
+                <a href="https://github.com/Guojiawei-01/sp500" target="_blank" rel="noreferrer">Source repo</a>
               </div>
             </div>
           </article>
