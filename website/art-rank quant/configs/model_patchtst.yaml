@@ -1,0 +1,10 @@
+model_version: patchtst-v1
+sequence_length: 120
+patch_size: 10
+stride: 5
+embedding_dim: 64
+heads: 4
+layers: 2
+batch_size: 64
+epochs: 10
+early_stopping_patience: 3

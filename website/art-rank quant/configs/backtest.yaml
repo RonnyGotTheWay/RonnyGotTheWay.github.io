@@ -1,0 +1,9 @@
+signal_time: close
+execution_time: next_open
+commission_bps: 3.0
+stamp_duty_bps_sell: 5.0
+slippage_bps: 5.0
+impact_coefficient: 0.1
+max_volume_participation: 0.05
+t_plus_one: true
+

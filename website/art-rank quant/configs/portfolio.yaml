@@ -1,0 +1,9 @@
+holdings: 40
+max_stock_weight: 0.05
+max_sector_weight: 0.25
+max_turnover: 0.40
+max_beta: 1.10
+risk_aversion: 3.0
+turnover_penalty: 0.5
+minimum_amount: 1000000
+

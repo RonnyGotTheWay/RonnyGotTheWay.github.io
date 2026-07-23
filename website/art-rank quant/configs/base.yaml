@@ -1,0 +1,8 @@
+app_env: local
+timezone: Asia/Shanghai
+random_seed: 474
+data_root: ./data
+artifact_root: ./artifacts
+api_host: 127.0.0.1
+api_port: 8000
+

@@ -1,0 +1,5 @@
+version: 1
+level: INFO
+json: true
+redact_fields: [authorization, api_key, password, token]
+

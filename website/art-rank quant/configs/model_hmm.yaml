@@ -1,0 +1,5 @@
+model_version: hmm-v1
+state_candidates: [3, 4, 5]
+covariance_type: full
+random_seed: 474
+

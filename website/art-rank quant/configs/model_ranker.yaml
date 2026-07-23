@@ -1,0 +1,9 @@
+model_version: art-ranker-v1
+objective: lambdarank
+label_bins: 5
+group: trade_date
+horizon: 1
+num_leaves: 31
+max_bin: 63
+n_estimators: 300
+num_threads: 8

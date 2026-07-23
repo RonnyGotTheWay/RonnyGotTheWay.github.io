@@ -1,0 +1,71 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "art-rank-quant"
+version = "0.1.0"
+description = "Auditable A-share daily quantitative research platform"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "akshare>=1.18,<2",
+  "alembic>=1.16,<2",
+  "baostock==0.9.3",
+  "cvxpy>=1.6,<2",
+  "duckdb>=1.3,<2",
+  "fastapi>=0.116,<1",
+  "hmmlearn>=0.3,<1",
+  "httpx>=0.28,<1",
+  "lightgbm>=4.6,<5",
+  "mlflow>=3.2,<4",
+  "numpy>=2.1,<3",
+  "polars>=1.31,<2",
+  "psycopg[binary]>=3.2,<4",
+  "pyarrow>=20,<22",
+  "pydantic>=2.11,<3",
+  "pydantic-settings>=2.10,<3",
+  "PyYAML>=6,<7",
+  "scikit-learn>=1.7,<2",
+  "scipy>=1.15,<2",
+  "sqlalchemy>=2.0,<3",
+  "torch>=2.7,<3",
+  "typer>=0.16,<1",
+  "uvicorn[standard]>=0.35,<1",
+]
+
+[dependency-groups]
+dev = [
+  "mypy>=1.16,<2",
+  "pre-commit>=4.2,<5",
+  "pytest>=8.4,<9",
+  "pytest-cov>=6.2,<7",
+  "ruff>=0.12,<1",
+]
+
+[project.scripts]
+art-rank = "art_rank_quant.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/art_rank_quant"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[tool.mypy]
+python_version = "3.12"
+packages = ["art_rank_quant"]
+strict = true
+warn_unused_ignores = true
+
+[[tool.mypy.overrides]]
+module = ["sklearn.*", "hmmlearn.*", "baostock", "akshare.*", "yaml"]
+ignore_missing_imports = true

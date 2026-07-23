@@ -1,0 +1,8 @@
+model_version: tft-v1
+encoder_length: 60
+horizons: [5, 20]
+hidden_size: 32
+quantiles: [0.1, 0.5, 0.9]
+batch_size: 64
+epochs: 30
+early_stopping_patience: 5

@@ -1,0 +1,8 @@
+version: ensemble-v1
+rank_ic_window: 60
+smoothing: 0.2
+min_weight: 0.1
+max_weight: 0.7
+require_same_horizon: true
+require_lagged_realization: true
+

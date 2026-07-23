@@ -1,0 +1,14 @@
+{
+  "name": "art-rank-quant",
+  "private": true,
+  "engines": {"node": ">=24 <25"},
+  "workspaces": ["apps/web"],
+  "scripts": {
+    "dev:web": "npm --workspace apps/web run dev",
+    "build:web": "npm --workspace apps/web run build",
+    "lint:web": "npm --workspace apps/web run lint",
+    "typecheck:web": "npm --workspace apps/web run typecheck",
+    "test:web": "npm --workspace apps/web run test"
+  }
+}
+

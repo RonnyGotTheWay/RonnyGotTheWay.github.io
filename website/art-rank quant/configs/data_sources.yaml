@@ -1,0 +1,23 @@
+provider: akshare
+synthetic:
+  config: configs/synthetic_data.yaml
+eastmoney:
+  source_page: https://quote.eastmoney.com/center/gridlist.html#hs_a_board
+  dataset: eastmoney_stock_daily
+  schema_version: eastmoney-daily-v1
+  auth: none
+  permission_confirmation_required: true
+  redistribution: prohibited
+real_sources:
+  - akshare
+  - baostock
+  - eastmoney
+two_month_report:
+  window_days: 60
+  primary: akshare
+  validator: baostock
+  beijing_exchange_fallback: eastmoney
+  close_tolerance_pct: 0.1
+  daily_return_tolerance_percentage_points: 0.2
+  minimum_source_coverage: 0.95
+  minimum_overlap_agreement: 0.98

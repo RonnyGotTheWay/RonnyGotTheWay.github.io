@@ -1,0 +1,6 @@
+version: features-v1
+price_windows: [5, 20, 60]
+winsor_mad: 5.0
+standardization: cross_sectional_zscore
+neutralize: [sector, log_market_cap]
+
