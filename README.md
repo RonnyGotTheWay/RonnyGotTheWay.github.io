@@ -14,6 +14,31 @@ I am a statistics student at the University of Arizona with strong interests in 
 
 ---
 
+## Website
+
+### ART-Rank Quant（智势量选）
+
+**Type:** Auditable A-share quantitative research platform and website<br>
+**Stack:** Python, FastAPI, Next.js, TypeScript, PostgreSQL, Parquet, LightGBM, PyTorch<br>
+**Source code:** [Browse and download ART-Rank Quant](website/art-rank%20quant/)
+
+ART-Rank Quant is a research-only platform for daily A-share analysis. It connects point-in-time data processing, walk-forward modeling, stock ranking, constrained portfolio construction, backtesting, APIs, and a bilingual research website in one reproducible workflow.
+
+| Website feature | What it provides |
+| --- | --- |
+| 60-trading-day market report | Market direction, sector trends, breadth, liquidity, and recent regime context |
+| ART-Rank Top 10 | Overall and sector-level rankings with a 65% model score and 35% explainable trading-experience score |
+| Research reference ranges | Historically calibrated reference entry, target, expected-upside, and stop-loss ranges for each ranked stock |
+| Risk controls | Hard exclusions for ST, suspension, price limits, low liquidity, and clear five-day downtrends |
+| Auditable research pipeline | PIT alignment, purged walk-forward validation, append-only outputs, and T+1 execution assumptions |
+| Team-ready source package | Frontend, API, models, tests, configuration, documentation, and reproducible setup files; licensed local market data and secrets are excluded |
+
+Links: [Project README](website/art-rank%20quant/README.md) | [Web application](website/art-rank%20quant/apps/web/) | [Python package](website/art-rank%20quant/src/art_rank_quant/) | [Architecture](website/art-rank%20quant/docs/architecture.md)
+
+> This project is for research, backtesting, and simulated portfolios only. It does not connect to brokerage execution and does not provide investment advice.
+
+---
+
 ## Featured Projects
 
 ### 2026 MCM Problem C: Audience Vote Estimation and Fairness Optimization
